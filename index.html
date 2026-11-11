@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Dinar (DDN) - Official | Future of Money</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}
+body{background:#05050f;color:#fff;overflow-x:hidden}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:#000;position:sticky;top:0;z-index:100;border-bottom:2px solid #FFD700}
+.logo{font-size:22px;font-weight:900;color:#FFD700}
+.btn{background:#FFD700;color:#000;border:none;padding:11px 18px;border-radius:25px;font-weight:800;cursor:pointer}
+.btn2{background:#fff;color:#000;border:none;padding:11px 18px;border-radius:25px;font-weight:800;cursor:pointer}
+.container{max-width:520px;margin:0 auto;padding:0 15px 40px;position:relative;z-index:10}
+.hero{text-align:center;padding:35px 10px 15px}
+.hero h1{font-size:40px;line-height:1.1} .hero h1 span{color:#FFD700;text-shadow:0 0 20px #FFD700}
+.card{background:rgba(255,255,255,.07);border:1px solid rgba(255,215,0,.35);border-radius:20px;padding:20px;margin:15px 0}
+.balance{font-size:36px;font-weight:900;color:#FFD700;text-align:center}
+input{width:100%;padding:12px;border-radius:12px;border:1px solid #333;background:#111;color:#fff;margin:8px 0;outline:none}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stat{background:#111;border-radius:15px;padding:14px;text-align:center} .stat b{color:#FFD700;font-size:18px}
+.timeline{border-left:3px solid #FFD700;padding-left:15px;margin-top:12px}
+.timeline div{margin-bottom:14px} .timeline b{color:#FFD700}
+table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px} td,th{padding:8px;border-bottom:1px solid #222;text-align:left} th{color:#FFD700}
+#dinar-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1}
+.floating-dinar{position:fixed;z-index:999;cursor:pointer;filter:drop-shadow(0 0 12px #FFD700);animation:floatUp linear infinite}
+@keyframes floatUp{0%{transform:translateY(110vh) rotate(0deg);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateY(-10vh) rotate(360deg);opacity:0}}
+footer{text-align:center;opacity:.6;padding:20px;font-size:12px}
+</style>
+</head>
+<body>
+<canvas id="dinar-canvas"></canvas><div id="dinar-container"></div>
+<header><div class="logo">DIGITAL DINAR ✅ OFFICIAL</div><button class="btn" onclick="showLogin()">Login</button></header>
+<div class="container">
+<div class="hero"><h1>Future of Money<br><span>Digital Dinar</span></h1><p>More Secured Than Bitcoin • 55 Security Layers<br>Official Digital Currency • Made in India 🇮🇳</p><div style="display:flex;gap:10px;justify-content:center"><button class="btn" onclick="startMining()">⛏️ Start Mining</button><button class="btn2" onclick="document.getElementById('history').scrollIntoView({behavior:'smooth'})">📜 History</button></div><p style="font-size:12px;margin-top:12px;opacity:.7">🔒 SSL Secured • 🛡️ Anti-Hack • ⚡ Instant • Audited</p></div>
+
+<div class="card" style="border:2px solid #FFD700"><h3>👑 Creator & Founder</h3><div style="display:flex;gap:12px;align-items:center;margin-top:10px"><div style="width:55px;height:55px;background:#FFD700;color:#000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:900">D</div><div><b style="font-size:18px">Dinar Official</b><br><span style="font-size:13px;opacity:.8">Founder, Digital Dinar • Developer III</span><br><span style="font-size:12px;color:#4ade80">● Verified Creator • Visakhapatnam, India</span></div></div><p style="font-size:13px;margin-top:10px;opacity:.85">Creator of Digital Dinar, Bharat Brahma AGI. DevOps | Cloud | 55 Security Layers | PostgreSQL • Supabase • Quantum</p><p style="font-size:13px">📧 dinarofficial962@gmail.com • 💰 Open to ₹10 LPA+ | Freelance</p><button class="btn" style="margin-top:10px;font-size:13px" onclick="window.location.href='creator.html'">🔐 Creator Private Panel →</button></div>
+
+<div class="card"><div style="text-align:center;opacity:.7">YOUR WALLET BALANCE</div><div class="balance"><span id="balance">0</span> <small>DDN</small></div><div style="text-align:center;font-size:13px">Wallet: <b id="walletId">Not Logged In</b><br><span id="userEmail">Guest</span></div><div class="grid" style="margin-top:12px"><div class="stat"><b id="minedToday">0</b><br>Mined Today</div><div class="stat"><b id="totalMined">0</b><br>Total Mined</div></div><p style="text-align:center;font-size:12px;opacity:.6;margin-top:10px">🔒 Creator Wallet is PRIVATE - Only in Creator Panel</p></div>
+
+<div class="card" id="loginCard"><h3>Login with Email</h3><input id="emailInput" type="email" placeholder="dinarofficial962@gmail.com"><input type="text" placeholder="OTP - 123456 for Demo"><button class="btn" style="width:100%" onclick="doLogin()">Login & Claim Wallet</button><p style="font-size:12px;opacity:.6;margin-top:8px">Founder gets 31,50,000 DDN • New User gets 100 DDN Bonus</p></div>
+
+<div class="card" id="history"><h3>📜 History of Dinar - Muslim Golden Era</h3><div class="timeline"><div><b>622 AD - Origin</b><br>Islamic Dinar introduced. 1 Dinar = 4.25g Pure Gold.</div><div><b>700 - 1400 AD - Golden Age</b><br>1 Dinar = 1 Sheep, 1 Month Food, 10 Dirhams.</div><div><b>1900s - Paper Money</b><br>Gold standard removed, inflation started.</div><div><b>2026 - Digital Dinar Rebirth</b><br>Same 4.25g Gold Standard, now Digital. 55 Layers Secure.</div></div><h3 style="margin-top:18px">💰 Value - Then vs Now (Inflation Balanced)</h3><table><tr><th>Time</th><th>1 Dinar Value</th></tr><tr><td>1400 AD</td><td>1 Sheep / 1 Month Food</td></tr><tr><td>Gold Weight</td><td>4.25 Grams Pure Gold</td></tr><tr><td>Today Gold Rate (₹7,500/g)</td><td>₹31,875</td></tr><tr><td><b>1 Digital Dinar Today</b></td><td><b style="color:#FFD700">₹31,875 (Gold Backed)</b></td></tr><tr><td>Bitcoin</td><td>Not Gold Backed</td></tr><tr><td>Digital Dinar</td><td>Gold + History + Limited Supply</td></tr></table></div>
+
+<div class="card"><h3>🛡️ Why More Secured Than Bitcoin?</h3><table><tr><th>Feature</th><th>Bitcoin</th><th>DDN</th></tr><tr><td>Security Layers</td><td>1 Layer</td><td><b style="color:#4ade80">55 Layers ✅</b></td></tr><tr><td>Gold Backed</td><td>❌ No</td><td><b style="color:#4ade80">✅ 4.25g Gold</b></td></tr><tr><td>Creator Verified</td><td>❌ Unknown</td><td><b style="color:#4ade80">✅ Verified</b></td></tr><tr><td>Speed</td><td>10 Mins</td><td><b style="color:#4ade80">Instant ✅</b></td></tr><tr><td>Fees</td><td>High</td><td><b style="color:#4ade80">Zero ✅</b></td></tr></table></div>
+
+<div class="card"><h3>🔍 Balance Checker</h3><input id="checkId" placeholder="DDN-dinarofficial962-..."><button class="btn2" style="width:100%" onclick="checkBalance()">Check Balance</button><div id="checkResult" style="text-align:center;margin-top:10px;font-weight:800;color:#FFD700"></div></div>
+<div class="card"><h3>📄 White Paper</h3><p style="font-size:14px;line-height:1.6;opacity:.85"><b style="color:#FFD700">Digital Dinar (DDN)</b> - Total Supply: 100 Crore. Mining: Proof of Activity. Founder Reserve: 31,50,000 DDN. Vision: Every Indian can mine, save and spend without bank fees.</p></div>
+</div>
+<footer>© 2026 Digital Dinar • Official • Founder: dinarofficial962@gmail.com<br>🔒 Demo Digital Asset. Not a Government Currency.</footer>
+<script>
+const FOUNDER_EMAIL="dinarofficial962@gmail.com"; const FOUNDER_BALANCE=3150000; let balance=0, minedToday=0;
+function doLogin(){ const email=document.getElementById('emailInput').value.trim().toLowerCase(); if(!email||!email.includes('@')){alert('Enter valid email');return;} const namePart=email.split('@')[0].replace(/[^a-z0-9]/g,''); const walletId=email===FOUNDER_EMAIL?'DDN-dinarofficial962-6898':'DDN-'+namePart+'-'+Math.floor(1000+Math.random()*9000); document.getElementById('walletId').innerText=walletId; document.getElementById('userEmail').innerText=email; balance=email===FOUNDER_EMAIL?FOUNDER_BALANCE:100; alert(email===FOUNDER_EMAIL?'Welcome Founder! 31,50,000 DDN ✅ Creator Panel lo nee Private Key undi':'Welcome! 100 DDN Bonus 🎉'); updateUI(); localStorage.setItem('ddn_email',email); localStorage.setItem('ddn_wallet',walletId); localStorage.setItem('ddn_balance',balance); }
+function updateUI(){ document.getElementById('balance').innerText=balance.toLocaleString('en-IN'); document.getElementById('minedToday').innerText=minedToday; document.getElementById('totalMined').innerText=balance.toLocaleString('en-IN'); }
+function startMining(){ if(!localStorage.getItem('ddn_email')){alert('Login First');showLogin();return;} balance+=1; minedToday+=1; updateUI(); localStorage.setItem('ddn_balance',balance); }
+function showLogin(){ document.getElementById('loginCard').scrollIntoView({behavior:'smooth'}); }
+function checkBalance(){ const id=document.getElementById('checkId').value.trim(); if(!id){document.getElementById('checkResult').innerText='Enter Wallet ID';return;} document.getElementById('checkResult').innerText=id.toLowerCase().includes('dinarofficial962')?id+' : 31,50,000 DDN ✅ Founder Wallet':id+' : 0 DDN - Start Mining'; }
+let audioCtx; function playGoldSound(){ if(!audioCtx) audioCtx=new (window.AudioContext||window.webkitAudioContext)(); const t=audioCtx.currentTime; [2093,2637,3520].forEach((f,i)=>{ const o=audioCtx.createOscillator(),g=audioCtx.createGain(); o.type='sine'; o.frequency.value=f; g.gain.setValueAtTime(0.25/(i+1),t); g.gain.exponentialRampToValueAtTime(0.001,t+1.2); o.connect(g); g.connect(audioCtx.destination); o.start(t); o.stop(t+1.2); }); }
+function spawnDinar(){ const el=document.createElement('div'); el.className='floating-dinar'; el.innerHTML=Math.random()>0.5?'🪙':'<span style="color:#FFD700;font-weight:900;font-size:32px">D</span>'; el.style.left=Math.random()*95+'vw'; el.style.animationDuration=(6+Math.random()*6)+'s'; el.style.fontSize=(28+Math.random()*25)+'px'; el.onclick=(e)=>{ playGoldSound(); el.remove(); }; document.getElementById('dinar-container').appendChild(el); setTimeout(()=>el.remove(),12000); }
+setInterval(spawnDinar,900);
+document.addEventListener('click',(e)=>{ if(e.target.closest('.floating-dinar')) return; if(e.target.closest('button,a,.card')) playGoldSound(); });
+const canvas=document.getElementById('dinar-canvas'), ctx=canvas.getContext('2d'); let particles=[]; function resize(){canvas.width=innerWidth;canvas.height=innerHeight;} resize(); addEventListener('resize',resize);
+for(let i=0;i<60;i++) particles.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,s:Math.random()*2+0.5,vx:(Math.random()-0.5)*0.5,vy:(Math.random()-0.5)*0.5});
+(function draw(){ ctx.clearRect(0,0,canvas.width,canvas.height); particles.forEach(p=>{p.x+=p.vx;p.y+=p.vy; if(p.x<0||p.x>canvas.width)p.vx*=-1; if(p.y<0||p.y>canvas.height)p.vy*=-1; ctx.beginPath(); ctx.arc(p.x,p.y,p.s,0,Math.PI*2); ctx.fillStyle='rgba(255,215,0,0.7)'; ctx.shadowBlur=10; ctx.shadowColor='#FFD700'; ctx.fill();}); requestAnimationFrame(draw); })();
+const saved=localStorage.getItem('ddn_email'); if(saved){ document.getElementById('emailInput').value=saved; document.getElementById('walletId').innerText=localStorage.getItem('ddn_wallet')||'--'; document.getElementById('userEmail').innerText=saved; balance=parseInt(localStorage.getItem('ddn_balance')||'0'); updateUI(); }
+</script>
+</body>
+</html>
