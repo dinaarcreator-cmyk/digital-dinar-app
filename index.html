@@ -1,18 +1,8 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Digital Dinar - Official</title>
+﻿<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Digital Dinar - Official</title>
 <style>*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif}body{background:#000;color:#fff;padding:20px}.box{max-width:500px;margin:0 auto;text-align:center}.logo{font-size:28px;font-weight:900;color:#FFD700}.card{background:#111;border:2px solid #FFD700;border-radius:20px;padding:20px;margin:15px 0}.balance{font-size:36px;font-weight:900;color:#FFD700}button{background:#FFD700;color:#000;border:none;padding:12px 20px;border-radius:25px;font-weight:800;cursor:pointer;width:100%;margin:8px 0;font-size:16px}.btn2{background:#222;color:#FFD700;border:1px solid #FFD700}input{width:100%;padding:12px;border-radius:12px;border:1px solid #333;background:#222;color:#fff;margin:8px 0}</style>
-</head>
-<body><div class="box">
-<h1 class="logo">🪙 DIGITAL DINAR ✅ OFFICIAL</h1>
-<p style="opacity:.7;margin:10px 0">Future of Money - Digital Dinar</p>
+</head><body><div class="box">
+<h1 class="logo">🪙 DIGITAL DINAR ✅ OFFICIAL</h1><p style="opacity:.7">Future of Money - Digital Dinar</p>
 <div class="card"><h3>Creator & Founder - Dinar Official</h3><p style="opacity:.7;font-size:13px">Visakhapatnam, India</p><button class="btn2" onclick="window.location.href='creator.html'">🔐 Creator Private Panel</button></div>
-<div class="card"><p>YOUR WALLET BALANCE</p><div class="balance"><span id="bal">0</span> DDN</div><p style="font-size:13px;opacity:.7">Wallet: <span id="walletAddr">Not Logged In</span> | Guest</p><p style="font-size:13px;opacity:.7">1 DDN = ₹31,875 (Gold Backed)</p><button onclick="startMining()">⛏️ Start Mining</button><button class="btn2" onclick="alert('History coming soon!')">📜 History</button></div>
-<div class="card"><h3>Login / Signup</h3><input id="email" placeholder="Email"><input id="pass" type="password" placeholder="Password"><button onclick="login()">Login</button><p style="font-size:12px;opacity:.6;margin-top:10px">© 2026 Digital Dinar - Founder: Dinar Official</p></div>
-</div>
-<script>
-let balance = parseInt(localStorage.getItem('ddn_bal') || '0');
-document.getElementById('bal').innerText = balance.toLocaleString('en-IN');
-function startMining(){ balance += 1; localStorage.setItem('ddn_bal', balance); document.getElementById('bal').innerText = balance.toLocaleString('en-IN'); alert('Mining Success! +1 DDN Added. Balance: ' + balance + ' DDN'); }
-function login(){ let e=document.getElementById('email').value; if(!e){ alert('Email pettu bro!'); return; } document.getElementById('walletAddr').innerText='DDN-'+e.split('@')[0]; alert('Welcome '+e+'! Login Success!'); }
-</script></body></html>
+<div class="card"><p>YOUR WALLET BALANCE</p><div class="balance"><span id="bal">0</span> DDN</div><p style="font-size:13px;opacity:.7">Wallet: <span id="walletAddr">Not Logged In</span> | Guest</p><p style="font-size:13px">Mining Status: <span id="miningStatus">Stopped</span></p><button onclick="startMining()">⛏️ Start Mining</button><button class="btn2" onclick="showHistory()">📜 History</button><div id="historyBox" style="text-align:left;font-size:13px;margin-top:10px"></div></div>
+<div class="card"><h3>Login / Signup</h3><input id="email" placeholder="Email"><input id="pass" type="password" placeholder="Password"><button onclick="login()">Login</button></div>
+</div><script src="app.js"></script></body></html>
